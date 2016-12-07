@@ -1,0 +1,40 @@
+{
+  "name": "docpage-api",
+  "version": "1.0.0",
+  "description": "api server for docpage.org",
+  "main": "index.js",
+  "scripts": {
+    "build": "docpage build docs/landing.md > sites/index.html",
+    "test": "tape tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docpage/docpage-api.git"
+  },
+  "keywords": [
+    "documentation",
+    "docs"
+  ],
+  "author": "sethvincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/docpage/docpage-api/issues"
+  },
+  "homepage": "https://github.com/docpage/docpage-api#readme",
+  "dependencies": {
+    "JSONStream": "^1.2.1",
+    "appa": "^6.0.0",
+    "level": "^1.5.0",
+    "level-model": "^2.0.4",
+    "level-party": "^3.0.4",
+    "mkdirp": "^0.5.1",
+    "multiparty": "^4.1.2",
+    "pump": "^1.0.1",
+    "rimraf": "^2.5.4",
+    "through2": "^2.0.3",
+    "township": "github:township/township"
+  },
+  "devDependencies": {
+    "request": "^2.79.0"
+  }
+}

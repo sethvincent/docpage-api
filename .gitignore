@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+tmp
+*.log*
+db
+sites/*
+!sites/index.html
+config.js
