@@ -35,7 +35,7 @@
     "township": "github:township/township"
   },
   "devDependencies": {
-    "docpage": "^1.1.0",
+    "docpage": "^1.1.1",
     "request": "^2.79.0"
   }
 }
