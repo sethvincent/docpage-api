@@ -24,6 +24,7 @@
   "dependencies": {
     "JSONStream": "^1.2.1",
     "appa": "^6.0.0",
+    "docpage": "^1.1.2",
     "level": "^1.5.0",
     "level-model": "^2.0.4",
     "level-party": "^3.0.4",
