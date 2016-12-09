@@ -1,6 +1,8 @@
-# docpage
+# 📄 docpage
 
 Quickly publish documentation sites from a single markdown file.
+
+> This is an example of a pagedoc site!
 
 ## About
 
@@ -9,6 +11,7 @@ With `docpage` a single markdown file becomes:
 - a single html file with:
   - simple, readable styles
   - a sidebar with table of contents
+  - links in the header to git repo and main project website
 - a documentation site on [docpage.org](https://docpage.org) *(optional)*
 
 ## Install
@@ -27,17 +30,41 @@ npm install -g docpage
 docpage build example.md > site/index.html
 ```
 
+### Watch for changes and rebuild:
+
+```sh
+docpage build example.md > site/index.html --watch
+```
+
+### Put project description in header
+
+```sh
+docpage build example.md > site/index.html --description "simple docs site from a markdown file"
+```
+
+### Put git repo and main website links in header
+
+```sh
+docpage build example.md > site/index.html --code https://github.com/sethvincent/docpage --main-website http://sethvincent.com
+```
+
+### Start a development server
+
+```sh
+docpage start example.md
+```
+
+### Watch for change and rebuild
+
+```sh
+docpage start example.md --watch
+```
+
 ### Publish a markdown file to docpage.org
 
 ```sh
 docpage register
 docpage publish example.md example-docpage-site
-```
-
-### Watch a markdown file for changes and serve through a development server
-
-```sh
-docpage start example.md
 ```
 
 ### Full command-line help text
@@ -47,18 +74,30 @@ USAGE:
   docpage {command} [options]
 
 COMMANDS:
-  publish,   publish a page
-  build,     build page,
-  start,     serve a page locally
-  register,  create an account on docpage.org
-  login,     log in to docpage.org
-  help,      show this help message
+  publish     publish a page
+  build       build page,
+  start       serve a page locally
+  register    create an account on docpage.org
+  login       log in to docpage.org
+  help        show this help message
 
 BUILD
   docpage build file.md
 
+  Options:
+  -o, --output          the filepath of the html file you want to create
+  -w, --watch           watch the markdown file for changes and rebuild
+  -c, --code            link to code repository
+  -m, --main-website    link to main website for project
+
 START
   docpage start file.md
+
+  Options:
+  -o, --output          the filepath of the html file you want to create
+  -w, --watch           watch the markdown file for changes and rebuild
+  -c, --code            link to code repository
+  -m, --main-website    link to main website for project
 
 PUBLISH
   docpage publish file.md name-of-project

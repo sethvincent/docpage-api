@@ -23,6 +23,8 @@ module.exports = function (db, config) {
       this.push({
         key: data.key,
         slug: data.slug,
+        url: data.url,
+        json: data.json,
         created: data.created,
         updated: data.updated
       })

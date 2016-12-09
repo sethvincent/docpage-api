@@ -4,7 +4,7 @@
   "description": "api server for docpage.org",
   "main": "index.js",
   "scripts": {
-    "build": "docpage build docs/landing.md > sites/index.html",
+    "build": "docpage build docs/landing.md > sites/index.html --code https://github.com/sethvincent/docpage --description 'simple docs site from a markdown file'",
     "test": "tape tests/*.js"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "township": "github:township/township"
   },
   "devDependencies": {
+    "docpage": "^1.1.0",
     "request": "^2.79.0"
   }
 }

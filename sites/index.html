@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>docpage</title>
+<title>📄 docpage</title>
 <meta charset="utf-8">
 
 
 
-      <meta name="description" content="undefined">
+      <meta name="description" content="simple docs site from a markdown file">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
       /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -800,6 +800,7 @@ p code {
   background-color: #fafafa;
   padding: 20px;
   font-size: 0.9em;
+  overflow-x: auto;
 }
 
 p code {
@@ -815,6 +816,13 @@ p code {
   background-color: #fafafa;
   z-index: 10;
   margin-left: 220px;
+}
+
+.site-header-link {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 0.7em;
+  text-transform: uppercase;
 }
 
 .site-title {
@@ -917,14 +925,17 @@ p code {
     
 </head>
 <body>
-<div>
+<div style="height:100%;">
     <header class="site-header">
-    <h1 class="site-title">docpage</h1>
-    <p class="site-description"></p>
+    <h1 class="site-title">📄 docpage</h1>
+    <p class="site-description">simple docs site from a markdown file</p>
+    <a href="https://github.com/sethvincent/docpage" class="site-header-link">
+      github
+    </a>
   </header>
     <div class="sidebar"><div class="sidebar-menu">
     <div class="level-1 sidebar-menu-item">
-      <a href="#docpage">docpage</a>
+      <a href="#-docpage">📄 docpage</a>
     </div><div class="level-2 sidebar-menu-item">
       <a href="#about">About</a>
     </div><div class="level-2 sidebar-menu-item">
@@ -934,9 +945,17 @@ p code {
     </div><div class="level-3 sidebar-menu-item">
       <a href="#build-the-index-html-file-from-a-markdown-file-">Build the index.html file from a markdown file:</a>
     </div><div class="level-3 sidebar-menu-item">
-      <a href="#publish-a-markdown-file-to-docpage-org">Publish a markdown file to docpage.org</a>
+      <a href="#watch-for-changes-and-rebuild-">Watch for changes and rebuild:</a>
     </div><div class="level-3 sidebar-menu-item">
-      <a href="#watch-a-markdown-file-for-changes-and-serve-through-a-development-server">Watch a markdown file for changes and serve through a development server</a>
+      <a href="#put-project-description-in-header">Put project description in header</a>
+    </div><div class="level-3 sidebar-menu-item">
+      <a href="#put-git-repo-and-main-website-links-in-header">Put git repo and main website links in header</a>
+    </div><div class="level-3 sidebar-menu-item">
+      <a href="#start-a-development-server">Start a development server</a>
+    </div><div class="level-3 sidebar-menu-item">
+      <a href="#watch-for-change-and-rebuild">Watch for change and rebuild</a>
+    </div><div class="level-3 sidebar-menu-item">
+      <a href="#publish-a-markdown-file-to-docpage-org">Publish a markdown file to docpage.org</a>
     </div><div class="level-3 sidebar-menu-item">
       <a href="#full-command-line-help-text">Full command-line help text</a>
     </div><div class="level-2 sidebar-menu-item">
@@ -949,14 +968,18 @@ p code {
       <a href="#contact">Contact</a>
     </div>
   </div></div>
-    <div class="content"><h1 id="docpage">docpage</h1>
+    <div class="content"><h1 id="-docpage">📄 docpage</h1>
 <p>Quickly publish documentation sites from a single markdown file.</p>
+<blockquote>
+<p>This is an example of a pagedoc site!</p>
+</blockquote>
 <h2 id="about">About</h2>
 <p>With <code>docpage</code> a single markdown file becomes:</p>
 <ul>
 <li>a single html file with:<ul>
 <li>simple, readable styles</li>
 <li>a sidebar with table of contents</li>
+<li>links in the header to git repo and main project website</li>
 </ul>
 </li>
 <li>a documentation site on <a href="https://docpage.org">docpage.org</a> <em>(optional)</em></li>
@@ -969,30 +992,54 @@ p code {
 <h3 id="build-the-index-html-file-from-a-markdown-file-">Build the index.html file from a markdown file:</h3>
 <pre><code class="lang-sh">docpage build example.md &gt; site/index.html
 </code></pre>
+<h3 id="watch-for-changes-and-rebuild-">Watch for changes and rebuild:</h3>
+<pre><code class="lang-sh">docpage build example.md &gt; site/index.html --watch
+</code></pre>
+<h3 id="put-project-description-in-header">Put project description in header</h3>
+<pre><code class="lang-sh">docpage build example.md &gt; site/index.html --description <span class="hljs-string">"simple docs site from a markdown file"</span>
+</code></pre>
+<h3 id="put-git-repo-and-main-website-links-in-header">Put git repo and main website links in header</h3>
+<pre><code class="lang-sh">docpage build example.md &gt; site/index.html --code https://github.com/sethvincent/docpage --main-website http://sethvincent.com
+</code></pre>
+<h3 id="start-a-development-server">Start a development server</h3>
+<pre><code class="lang-sh">docpage start example.md
+</code></pre>
+<h3 id="watch-for-change-and-rebuild">Watch for change and rebuild</h3>
+<pre><code class="lang-sh">docpage start example.md --watch
+</code></pre>
 <h3 id="publish-a-markdown-file-to-docpage-org">Publish a markdown file to docpage.org</h3>
 <pre><code class="lang-sh">docpage register
 docpage publish example.md example-docpage-site
-</code></pre>
-<h3 id="watch-a-markdown-file-for-changes-and-serve-through-a-development-server">Watch a markdown file for changes and serve through a development server</h3>
-<pre><code class="lang-sh">docpage start example.md
 </code></pre>
 <h3 id="full-command-line-help-text">Full command-line help text</h3>
 <pre><code>USAGE:
   docpage {command} [options]
 
 COMMANDS:
-  publish,   publish <span class="hljs-selector-tag">a</span> page
-  build,     build page,
-  start,     serve <span class="hljs-selector-tag">a</span> page locally
-  register,  create an account on docpage<span class="hljs-selector-class">.org</span>
-  login,     log <span class="hljs-keyword">in</span> to docpage<span class="hljs-selector-class">.org</span>
-  help,      show this help message
+  publish     publish <span class="hljs-selector-tag">a</span> page
+  build       build page,
+  start       serve <span class="hljs-selector-tag">a</span> page locally
+  register    create an account on docpage<span class="hljs-selector-class">.org</span>
+  login       log <span class="hljs-keyword">in</span> to docpage<span class="hljs-selector-class">.org</span>
+  help        show this help message
 
 BUILD
   docpage build file<span class="hljs-selector-class">.md</span>
 
+  Options:
+  -o, --output          the filepath of the <span class="hljs-selector-tag">html</span> file you want to create
+  -w, --watch           watch the markdown file <span class="hljs-keyword">for</span> changes and rebuild
+  -c, --<span class="hljs-selector-tag">code</span>            link to <span class="hljs-selector-tag">code</span> repository
+  -m, --main-website    link to main website <span class="hljs-keyword">for</span> project
+
 START
   docpage start file<span class="hljs-selector-class">.md</span>
+
+  Options:
+  -o, --output          the filepath of the <span class="hljs-selector-tag">html</span> file you want to create
+  -w, --watch           watch the markdown file <span class="hljs-keyword">for</span> changes and rebuild
+  -c, --<span class="hljs-selector-tag">code</span>            link to <span class="hljs-selector-tag">code</span> repository
+  -m, --main-website    link to main website <span class="hljs-keyword">for</span> project
 
 PUBLISH
   docpage publish file<span class="hljs-selector-class">.md</span> name-of-project
