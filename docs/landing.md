@@ -2,7 +2,7 @@
 
 Quickly publish documentation sites from a single markdown file.
 
-> This is an example of a pagedoc site!
+> This is an example of a docpage site!
 
 ## About
 
