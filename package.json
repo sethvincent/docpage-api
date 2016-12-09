@@ -1,6 +1,6 @@
 {
   "name": "docpage-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "api server for docpage.org",
   "main": "index.js",
   "scripts": {
